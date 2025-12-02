@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  # 1. Die OSS/CNCF Middleware
+  redis:
+    image: redis:6-alpine
+    container_name: redis_queue
+    ports:
+      - "6379:6379"
+  
+  # 2. Der Aufgaben-Erzeuger (Producer)
+  producer:
+    build:
+      context: ./producer
+    container_name: task_producer
+    ports:
+      - "8080:8080" # Der öffentliche Endpunkt für die UI/API
+    environment:
+      # REDIS_HOST zeigt auf den Dienstnamen 'redis' im Docker-Netzwerk
+      REDIS_HOST: redis
+    depends_on:
+      - redis
+      
+  # 3. Der Aufgaben-Verarbeiter (Consumer)
+  consumer:
+    build:
+      context: ./consumer
+    container_name: task_consumer
+    environment:
+      REDIS_HOST: redis
+    depends_on:
+      - redis
