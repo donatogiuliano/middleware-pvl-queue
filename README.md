@@ -52,12 +52,12 @@ The system consists of **three decoupled Docker containers**:
 
 ---
 
-## 4. 🚀 How to Run the System
-### **4.1. Prerequisites**
+## 3. 🚀 How to Run the System
+### **3.1. Prerequisites**
 - Docker (Running)
 - Docker Compose
 
-### **4.2. Start the System**
+### **3.2. Start the System**
 `
 docker-compose up --build -d
 `
@@ -65,36 +65,36 @@ docker-compose up --build -d
 Dashboard accessible at:
 👉 http://localhost:8080
 
-### **4.3. Stop the System**
+### **3.3. Stop the System**
 docker-compose down
 
-## 5. 🧪 Resilience Demonstration (Lab Task)
+## 4. 🧪 Resilience Demonstration (Lab Task)
 
 This experiment demonstrates that the system remains reliable even when the worker is stopped or crashes.  
 All tasks stay safely stored in Redis until processing resumes.
 
-### **5.1. Stop the Worker**  
+### **4.1. Stop the Worker**  
 Click the red **STOP** button in the dashboard.  
 The worker switches to *paused mode* and no longer consumes tasks.
 
-### **5.2. Submit Tasks**  
+### **4.2. Submit Tasks**  
 Enter several numbers and click **Submit Task**.  
 The queue begins to fill up and the UI updates in real time.
 
-### **5.3. Observe Queue Behavior**  
+### **4.3. Observe Queue Behavior**  
 All incoming tasks remain stored in Redis.  
 No data is lost, even when the worker is completely offline.
 
-### **5.4. Restart the Worker**  
+### **4.4. Restart the Worker**  
 Click the green **START** button.  
 The worker reconnects and processes all buffered tasks one by one (with a 6-second delay per item).
 
-### **5.5. Export State (Optional)**  
+### **4.5. Export State (Optional)**  
 Use the **⬇ Download JSON** option to export the current queue and result history for auditing or debugging.
 
 ---
 
-## 6. 📂 Project Structure
+## 5. 📂 Project Structure
 
 The project is organized into three main components, each running in its own Docker container.
 
