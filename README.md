@@ -11,10 +11,11 @@
 
 ## 🧩 1. Project Overview
 
-This project demonstrates the **Persistent Queue Pattern** using a small distributed system.  
-The goal is to ensure that **tasks remain durable and are not lost**, even if the processing component (Consumer) crashes or is intentionally paused.
+This project demonstrates the Persistent Queue Pattern using a small distributed system.
+To make the behavior of the queue more transparent and easy to understand, we intentionally added a simple web UI.
+The interface helps visualize how tasks are queued, how persistence works when the worker is paused or stopped, and how the system recovers once the worker resumes.
 
-To achieve this, the system uses **Redis** as a persistent, reliable message broker.
+For demonstration purposes, we use a very simple function (x²) so that the processing steps stay clear and the focus remains on the distributed-system pattern itself.
 
 The web UI visualizes:
 
