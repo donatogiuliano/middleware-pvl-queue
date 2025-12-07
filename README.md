@@ -99,5 +99,4 @@ The project is organized into three main components, each running in its own Doc
 
 - producer: Flask web interface (task submission + live dashboard)
 - consumer: Background worker that processes queued tasks
-- docker-compose.yml: Orchestration file for all services
-- README.md: Documentation
+- redis container
