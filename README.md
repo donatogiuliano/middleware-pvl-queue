@@ -68,6 +68,8 @@ Dashboard accessible at:
 ### **3.3. Stop the System**
 docker-compose down
 
+---
+
 ## 4. 🧪 Resilience Demonstration (Lab Task)
 
 This experiment demonstrates that the system remains reliable even when the worker is stopped or crashes.  
