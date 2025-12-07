@@ -15,7 +15,7 @@ This project demonstrates the Persistent Queue Pattern using a small distributed
 To make the behavior of the queue more transparent and easy to understand, we intentionally added a simple web UI.
 The interface helps visualize how tasks are queued, how persistence works when the worker is paused or stopped, and how the system recovers once the worker resumes.
 
-For demonstration purposes, we use a very simple function (x²) so that the processing steps stay clear and the focus remains on the distributed-system pattern itself.
+For demonstration purposes, we use a very simple function `x²` so that the processing steps stay clear and the focus remains on the distributed-system pattern itself.
 
 The web UI visualizes:
 
