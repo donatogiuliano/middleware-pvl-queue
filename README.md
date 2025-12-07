@@ -1,4 +1,4 @@
-# 📦 Persistent Queues with Redis (Middleware Technology PVL)
+# 📦 Persistent Queues with Redis (PVL)
 
 **Course:** Middleware Technology  
 **Team Members:**  
