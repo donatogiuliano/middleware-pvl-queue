@@ -53,7 +53,7 @@ The system consists of **three decoupled Docker containers**:
 
 ## 4. 🚀 How to Run the System
 ### **1. Prerequisites
-- Docker
+- Docker (Running)
 - Docker Compose
 
 ### **2. Start the System
