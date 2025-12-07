@@ -53,11 +53,11 @@ The system consists of **three decoupled Docker containers**:
 ---
 
 ## 4. 🚀 How to Run the System
-### **1. Prerequisites
+### **1. Prerequisites**
 - Docker (Running)
 - Docker Compose
 
-### **2. Start the System
+### **2. Start the System**
 `
 docker-compose up --build -d
 `
@@ -65,7 +65,7 @@ docker-compose up --build -d
 Dashboard accessible at:
 👉 http://localhost:8080
 
-### **3. Stop the System
+### **3. Stop the System**
 docker-compose down
 
 ## 5. 🧪 Resilience Demonstration (Lab Task)
