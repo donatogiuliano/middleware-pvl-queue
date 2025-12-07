@@ -30,7 +30,7 @@ The web UI visualizes:
 
 The system consists of **three decoupled Docker containers**:
 
-### **1. Producer (Flask Web UI)**  
+### **2.1. Producer (Flask Web UI)**  
 - Accepts numbers from the user  
 - Pushes tasks into Redis using `LPUSH`  
 - Shows real-time queue state  
@@ -38,13 +38,13 @@ The system consists of **three decoupled Docker containers**:
 - Displays processed results  
 - Provides JSON export functionality  
 
-### **2. Redis (Middleware / OSS Tool)**  
+### **2.2. Redis (Middleware / OSS Tool)**  
 - Acts as the persistent queue  
 - Stores all tasks reliably  
 - Buffers tasks even when the worker is offline  
 - Enables full decoupling of Producer and Consumer  
 
-### **3. Consumer (Background Worker)**  
+### **2.3. Consumer (Background Worker)**  
 - Continuously retrieves tasks using `BRPOP`  
 - Simulates heavy work through a 6-second delay  
 - Computes `x²` and stores results back into Redis  
@@ -53,11 +53,11 @@ The system consists of **three decoupled Docker containers**:
 ---
 
 ## 4. 🚀 How to Run the System
-### **1. Prerequisites**
+### **4.1. Prerequisites**
 - Docker (Running)
 - Docker Compose
 
-### **2. Start the System**
+### **4.2. Start the System**
 `
 docker-compose up --build -d
 `
@@ -65,7 +65,7 @@ docker-compose up --build -d
 Dashboard accessible at:
 👉 http://localhost:8080
 
-### **3. Stop the System**
+### **4.3. Stop the System**
 docker-compose down
 
 ## 5. 🧪 Resilience Demonstration (Lab Task)
@@ -73,23 +73,23 @@ docker-compose down
 This experiment demonstrates that the system remains reliable even when the worker is stopped or crashes.  
 All tasks stay safely stored in Redis until processing resumes.
 
-### **1. Stop the Worker**  
+### **5.1. Stop the Worker**  
 Click the red **STOP** button in the dashboard.  
 The worker switches to *paused mode* and no longer consumes tasks.
 
-### **2. Submit Tasks**  
+### **5.2. Submit Tasks**  
 Enter several numbers and click **Submit Task**.  
 The queue begins to fill up and the UI updates in real time.
 
-### **3. Observe Queue Behavior**  
+### **5.3. Observe Queue Behavior**  
 All incoming tasks remain stored in Redis.  
 No data is lost, even when the worker is completely offline.
 
-### **4. Restart the Worker**  
+### **5.4. Restart the Worker**  
 Click the green **START** button.  
 The worker reconnects and processes all buffered tasks one by one (with a 6-second delay per item).
 
-### **5. Export State (Optional)**  
+### **5.5. Export State (Optional)**  
 Use the **⬇ Download JSON** option to export the current queue and result history for auditing or debugging.
 
 ---
