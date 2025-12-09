@@ -102,4 +102,4 @@ The project is organized into three main components, each running in its own Doc
 
 - producer: Flask web interface (task submission + live dashboard)
 - consumer: Background worker that processes queued tasks
-- redis: Lightweight middleware container that stores all tasks persistently and buffers them while the worker is offline.
+- redis: Lightweight middleware container that stores all tasks persistently and buffers them while the worker is offline
