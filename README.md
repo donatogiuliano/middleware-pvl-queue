@@ -65,9 +65,6 @@ docker-compose up --build -d
 Dashboard accessible at:
 👉 http://localhost:8080
 
-### **3.3. Stop the System**
-docker-compose down
-
 ---
 
 ## 4. 🧪 Resilience Demonstration (Lab Task)
